@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3001
 
 app.use(cors());
 app.use(express.json());
@@ -56,6 +56,6 @@ app.post("/users", (req, res) => {
     res.json(user)
     users.push(user);
 })
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${port}`);
 })
